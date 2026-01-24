@@ -194,9 +194,7 @@ namespace MonoGame.Effect
 
                 if (shaderResult.Debug)
                 {
-                    toolArgs += "-Zi ";
-                    // Error: '-Fd cannot be used with -spirv' - investigate
-                    //toolArgs += "-Fd \"" + dbgFile + "\" ";
+                    toolArgs += "-fspv-debug=vulkan-with-source ";
                 }
                 toolArgs += "\"" + hlslFile + "\"";
                 toolResult = Dxc.Run(toolArgs, out stdout, out stderr);
